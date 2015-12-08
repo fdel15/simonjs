@@ -1,0 +1,168 @@
+.heading {
+  margin-bottom: -50px;
+}
+#gameboard {
+  height: 400px;
+  width: 400px;
+  //border: solid;
+  border-radius: 100%;
+  margin: 15% auto;
+  //background: darkgrey;
+}
+
+.colors {
+  border: solid;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border-radius: 150px 0 0 0;
+  margin: 35px;
+  cursor: pointer; cursor: hand;
+}
+
+#green {
+  border-radius: 150px 0 0 0;
+  margin: 35px;
+  background-color: darkgreen;
+}
+
+.greenActive {
+  background-color: lawngreen !important;
+}
+
+#red {
+  border-radius: 0 150px 0 0;
+  margin: 0 -35px 33px -10px;
+  background-color: darkred;
+}
+
+.redActive {
+  background-color: red !important;
+}
+
+#yellow {
+  border-radius: 0 0 0 150px;
+  margin: -15px 0 0 34px;
+  background-color: gold;
+}
+
+.yellowActive {
+  background-color: yellow !important;
+}
+
+#blue {
+  border-radius: 0 0 150px 0;
+  margin: -10px 0 0px 27px;
+  background-color: darkblue;
+}
+
+.blueActive {
+  background-color: blue !important;
+}
+
+#controls {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border: solid;
+  border-radius: 100%;
+  margin: -270px 0 0 98px;
+  background: white;
+  z-index: 1;
+}
+
+#regis {
+  position: absolute;
+  font-size: 1.00em;
+  margin: 29px 0 0 0;
+}
+
+#name {
+  display: inline-block;
+  margin: 25px 0 0 40px
+}
+
+#count {
+  height: 50px;
+  width: 50px;
+  border: solid;
+  margin: 10px 0 0 20px;
+  border-radius: 10px;
+}
+
+#number {
+  margin: 7px 0px 0 0px
+}
+
+#count span {
+  position: absolute;
+  margin: 10px 0 0 4px
+}
+
+#start {
+  height: 25px;
+  width: 25px;
+  border: solid 4px;
+  border-radius: 100%;
+  margin: -36px 0 0 88px;
+  background-color: red;
+  cursor: pointer; cursor: hand;
+}
+
+#start span {
+  position: absolute;
+  margin: 35px 0 0 -5px
+}
+
+#strict {
+  height: 25px;
+  width: 25px;
+  border: solid 4px;
+  border-radius: 100%;
+  margin: -25px 0 0 138px;
+  background-color: yellow;
+  cursor: pointer; cursor: hand;
+}
+
+#strict span {
+  position: absolute;
+  margin: 35px 0 0 -5px
+}
+
+#switch {
+  height: 25px;
+  width: 50px;
+  border: solid;
+  margin: 45px 0 0 73px;
+  cursor: pointer; cursor: hand;
+}
+
+#off {
+  height: 20px;
+  width: 20px;
+  background: navy;
+}
+
+#on {
+  height: 20px;
+  width: 20px;
+  margin: -20px 0 0 24px
+}
+
+#off-label {
+  position: absolute;
+  margin: 0 0 0 -23px
+}
+
+#on-label {
+  position: absolute;
+  margin: -20px 0 0 50px
+}
+
+.highlight {
+  opacity: 0.8;
+}
+
+#playAgain {
+  width: 100%
+}

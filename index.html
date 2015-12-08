@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>Wikipedia Viewer</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="animate.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="codepen.css">
+  <script src="codepen.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div class="container-fluid">
+  <h1 class="text-center heading">Try to get to 20!</h1>
+  <div id="gameboard">
+
+    <div class="colors" id="green">
+      <audio id="greenSound" preload="auto">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+      </audio>
+    </div>
+    <div class="colors" id="red">
+      <audio id="redSound" preload="auto">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+      </audio>
+    </div>
+    <div class="colors highlight" id="yellow">
+      <audio id="yellowSound" preload="auto">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+      </audio>
+    </div>
+    <div class="colors" id="blue">
+      <audio id="blueSound" preload="auto">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+      </audio>
+    </div>
+
+    <div id="controls">
+      <h1 id="name">Simon</h1><span id="regis">&reg</span>
+
+      <div id="count">
+        <h2 class="text-center" id="number">--</h2>
+        <span>count</span>
+      </div>
+
+      <div id="start">
+        <span>start</span>
+      </div>
+
+      <div id="strict">
+        <span>strict</span>
+      </div>
+
+      <div id="switch">
+        <span id="off-label">off</span>
+        <div id="off">
+        </div>
+        <span id="on-label">on</span>
+        <div id="on">
+        </div>
+      </div>
+    </div>
+
+  <audio id="wrongSound" preload="auto">
+    <source src="http://static1.grsites.com/archive/sounds/cartoon/cartoon010.mp3">
+    </source>
+  </audio>
+
+  </div><!-- gameboard -->
+</div><!--container-fluid-->
+
+<div id="gameOver" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">YOU WON</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Congratilations! You are a Simon Master. Play again?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="playAgain">Play Again</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
