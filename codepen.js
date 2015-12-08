@@ -4,7 +4,54 @@ var badClick = false;
 var strict;
 
 $(document).ready(function() {
-  //$('#gameOver').modal('show')
+  $('#off').on('click', function(){
+    turnOffColorHandlers()
+    $('#on').css('background', 'white');
+    $('#off').css('background', 'navy');
+    $('#start').off();
+    $('#strict').off();
+    endGame("off");
+    strict = false;
+    clearAllTimeouts()
+    removeCursors()
+  })
+
+  $('#on').on('click', function(){
+    $('#off').css('background', 'white');
+    $('#on').css('background', 'navy');
+    $('#start').on('click', function(){
+      turnOnColorHandlers()
+      strict = false;
+      newGame();
+    });
+    $('#strict').on('click', function(){
+      turnOnColorHandlers();
+      strict = true;
+      newGame();
+    })
+    addCursors();
+  })
+
+  $('.colors').on('mouseup', function(){
+    var color = $(this).attr('id')
+    if ( badClick ) { return; }
+    inactiveColor(color)
+  })
+
+  $(document).on('show.bs.modal', '#gameOver', function (event) {
+     var modal = $(this)
+     if( pattern.length < 20 ) {
+      modal.find('.modal-title').text('YOU LOSS');
+      modal.find('.modal-body p').text("Ughh tough loss. You'll do better next time")
+     } else {
+      modal.find('.modal-title').text('YOU WON');
+      modal.find('.modal-body p').text("Congratilations! You are a Simon Master. Play again?")
+     }
+  })
+
+  $(document).on('click', '#playAgain', function(){
+    newGame();
+  })
 })
 /*****************
  Game Play
@@ -135,37 +182,6 @@ function clearAllTimeouts() {
 /*****************
  event handlers
 ******************/
-
-// On Button
-$('#on').on('click', function(){
-  $('#off').css('background', 'white');
-  $('#on').css('background', 'navy');
-  $('#start').on('click', function(){
-    turnOnColorHandlers()
-    strict = false;
-    newGame();
-  });
-  $('#strict').on('click', function(){
-    turnOnColorHandlers();
-    strict = true;
-    newGame();
-  })
-})
-
-// Off Button
-$('#off').on('click', function(){
-  turnOffColorHandlers()
-  $('#on').css('background', 'white');
-  $('#off').css('background', 'navy');
-  $('#start').off();
-  $('#strict').off();
-  endGame("off");
-  strict = false;
-  clearAllTimeouts()
-})
-
-
-
 function turnOffColorHandlers() {
   $('.colors').off('mousedown');
 }
@@ -186,30 +202,17 @@ function turnOnMouseDown() {
 })
 }
 
+function removeCursors() {
+  $('.colors').css('cursor', 'default')
+  $('#strict').css('cursor', 'default')
+  $('#start').css('cursor', 'default')
+}
 
-$('.colors').on('mouseup', function(){
-  var color = $(this).attr('id')
-  if ( badClick ) { return; }
-  inactiveColor(color)
-})
-
-$(document).on('show.bs.modal', '#gameOver', function (event) {
-   var modal = $(this)
-   if( pattern.length < 20 ) {
-    modal.find('.modal-title').text('YOU LOSS');
-    modal.find('.modal-body p').text("Ughh tough loss. You'll do better next time")
-   } else {
-    modal.find('.modal-title').text('YOU WON');
-    modal.find('.modal-body p').text("Congratilations! You are a Simon Master. Play again?")
-   }
-})
-
-$(document).on('click', '#playAgain', function(){
-  newGame();
-})
-
-
-
+function addCursors() {
+  $('.colors').css('cursor', 'hand')
+  $('#strict').css('cursor', 'hand')
+  $('#start').css('cursor', 'hand')
+}
 
 /*****************
  colors and sounds

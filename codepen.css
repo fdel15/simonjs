@@ -17,7 +17,6 @@
   width: 150px;
   border-radius: 150px 0 0 0;
   margin: 35px;
-  cursor: pointer; cursor: hand;
 }
 
 #green {
@@ -106,7 +105,6 @@
   border-radius: 100%;
   margin: -36px 0 0 88px;
   background-color: red;
-  cursor: pointer; cursor: hand;
 }
 
 #start span {
@@ -121,7 +119,6 @@
   border-radius: 100%;
   margin: -25px 0 0 138px;
   background-color: yellow;
-  cursor: pointer; cursor: hand;
 }
 
 #strict span {
@@ -134,7 +131,7 @@
   width: 50px;
   border: solid;
   margin: 45px 0 0 73px;
-  cursor: pointer; cursor: hand;
+  cursor: hand;
 }
 
 #off {
