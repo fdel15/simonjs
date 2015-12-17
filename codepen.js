@@ -19,6 +19,7 @@ $(document).ready(function() {
   $('#on').on('click', function(){
     $('#off').css('background', 'white');
     $('#on').css('background', 'navy');
+    setCount();
     $('#start').on('click', function(){
       turnOnColorHandlers()
       strict = false;
