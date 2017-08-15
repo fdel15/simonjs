@@ -87,7 +87,7 @@ function addToPattern() {
 function playPattern() {
   var i;
   var speed = setTempo();
-  debugger;
+  
   turnOffColorHandlers();
   badClick = false;
 
